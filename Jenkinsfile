@@ -1,5 +1,5 @@
 /* import shared library. */
-@Library('ibaas-shared-library')_
+@Library('ibass-shared-library')_
 
 pipeline {
     environment {
