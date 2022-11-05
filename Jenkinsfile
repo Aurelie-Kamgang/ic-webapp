@@ -1,11 +1,11 @@
 /* import shared library. */
-@Library('ulrich-shared-library')_
+@Library('ibass-shared-library')_
 
 pipeline {
     environment {
-        IMAGE_NAME = "ic-webapp"
+        IMAGE_NAME = "ic-webapp:v2"
         APP_CONTAINER_PORT = "8080"
-        DOCKERHUB_ID = "choco1992"
+        DOCKERHUB_ID = "blondel"
         DOCKERHUB_PASSWORD = credentials('dockerhub_password')
         ANSIBLE_IMAGE_AGENT = "registry.gitlab.com/robconnolly/docker-ansible:latest"
     }
