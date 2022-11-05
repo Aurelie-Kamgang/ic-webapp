@@ -101,7 +101,7 @@ pipeline {
        }
 
       stage('Deploy application ') {
-        agent { docker { image 'registry.gitlab.com/robconnolly/docker-ansible:latest'  } }
+        //agent { docker { image 'registry.gitlab.com/robconnolly/docker-ansible:latest'  } }
         stages {
             stage ("Install Ansible role dependencies") {
                 steps {
