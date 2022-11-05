@@ -84,7 +84,7 @@ pipeline {
        }
 
        stage ('Prepare ansible environment') {
-          agent any
+          /*agent any
           environment {
             VAULT_KEY = credentials('vault_key')
             PRIVATE_KEY = credentials('private_key')
@@ -97,11 +97,11 @@ pipeline {
                   chmod 600 id_rsa
                '''
              }
-          }
+          }*/
        }
 
       stage('Deploy application ') {
-        //agent { docker { image 'registry.gitlab.com/robconnolly/docker-ansible:latest'  } }
+        /*agent { docker { image 'registry.gitlab.com/robconnolly/docker-ansible:latest'  } }
         stages {
             stage ("Install Ansible role dependencies") {
                 steps {
@@ -121,11 +121,11 @@ pipeline {
                             ansible all -m ping --private-key id_rsa  -l prod
                         '''
                     }
-                }
+                }*/
             }
 
             stage ("Check all playbook syntax") {
-                steps {
+                /*steps {
                     script {
                         sh '''
                             export ANSIBLE_CONFIG=$(pwd)/sources/ansible-ressources/ansible.cfg
@@ -133,11 +133,11 @@ pipeline {
                             echo ${GIT_BRANCH}                                         
                         '''
                     }
-                }
+                }*/
             }
 
             stage ("Deploy in PRODUCTION") {
-                when { expression { GIT_BRANCH == 'origin/main'} }                
+                /*when { expression { GIT_BRANCH == 'origin/main'} }                
                 stages {
                     stage ("PRODUCTION - Install Docker on all hosts") {
                         steps {
@@ -150,39 +150,39 @@ pipeline {
                                 
                                 
                             }
-                        }
+                        }*/
                     }
 
                     stage ("PRODUCTION - Deploy pgadmin") {
-                        steps {
+                        /*steps {
                             script {
                                 sh '''
                                     export ANSIBLE_CONFIG=$(pwd)/sources/ansible-ressources/ansible.cfg
                                     ansible-playbook sources/ansible-ressources/playbooks/deploy-pgadmin.yml --vault-password-file vault.key --private-key id_rsa -l pg_admin
                                 '''
                             }
-                        }
+                        }*/
                     }
                     stage ("PRODUCTION - Deploy odoo") {
-                        steps {
+                        /*steps {
                             script {
                                 sh '''
                                     export ANSIBLE_CONFIG=$(pwd)/sources/ansible-ressources/ansible.cfg
                                     ansible-playbook sources/ansible-ressources/playbooks/deploy-odoo.yml --vault-password-file vault.key --private-key id_rsa -l odoo
                                 '''
                             }
-                        }
+                        }*/
                     }
 
                     stage ("PRODUCTION - Deploy ic-webapp") {
-                        steps {
+                        /*steps {
                             script {
                                 sh '''
                                     export ANSIBLE_CONFIG=$(pwd)/sources/ansible-ressources/ansible.cfg
                                     ansible-playbook sources/ansible-ressources/playbooks/deploy-ic-webapp.yml --vault-password-file vault.key --private-key id_rsa -l ic_webapp
                                 '''
                             }
-                        }
+                        }*/
                     }
 
 
