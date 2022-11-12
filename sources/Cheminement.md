@@ -1,5 +1,5 @@
 # Etapes à suivre
-Ce petit tuto explique progressivement  comment mettre en oeuvre le prpojet fil rouge
+Ce petit tuto explique progressivement  comment mettre en oeuvre le propojet fil rouge
 
 ## Prérequis
 
@@ -12,12 +12,12 @@ Ce petit tuto explique progressivement  comment mettre en oeuvre le prpojet fil 
 - APP_EXPOSED_PORT : **8000**
 - IMAGE_NAME : **ic-webapp**
 - IMAGE_TAG : **v1.0**
-- DOCKERHUB_ID : **choco1992**
-- DOCKERFILE_NAME : **Dockerfile_v1.0**
+- DOCKERHUB_ID : **blondel**
+- DOCKERFILE_NAME : **Dockerfile_v4.0**
 
 #### Creation d'un répertoire de travail
 Sur votre poste de travail, créer un répertoire de travail et déplacer vous dans ce répertoire.
-Donnez lui le nom qui vous plait (**Projet fil rouge** par exemple)
+Donnez lui le nom qui vous plait (**ic-groupe-project** par exemple)
 
 #### Téléchargement du vagrantfile et ses dépendances dans le répertoire de travail
 Les vagrantfiles Eazytraining se trouvent [ici](https://github.com/diranetafen/cursus-devops/tree/master/vagrant)
